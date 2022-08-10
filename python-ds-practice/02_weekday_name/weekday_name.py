@@ -1,3 +1,6 @@
+from calendar import week
+
+
 def weekday_name(day_of_week):
     """Return name of weekday.
     
@@ -12,3 +15,6 @@ def weekday_name(day_of_week):
         >>> weekday_name(9)
         >>> weekday_name(0)
     """
+    week = ['Sunday',"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    if day_of_week in range(1,8):
+        return week[day_of_week-1]

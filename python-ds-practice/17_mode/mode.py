@@ -11,3 +11,11 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    counts = {num :nums.count(num) for num in nums}
+    ret = nums[0]
+    retcount = counts[ret]
+    for (num, count) in counts.items():
+        if count > retcount:
+            ret = num
+            retcount = count
+    return ret

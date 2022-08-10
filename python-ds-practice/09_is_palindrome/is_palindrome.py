@@ -21,3 +21,5 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+    str = "".join(phrase.lower().split()) #should remove whitespace regardless of type, and sets to lowercase
+    return str == str[::-1]
