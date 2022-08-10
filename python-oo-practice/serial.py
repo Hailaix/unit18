@@ -1,5 +1,8 @@
 """Python serial number generator."""
 
+from locale import currency
+
+
 class SerialGenerator:
     """Machine to create unique incrementing serial numbers.
     
@@ -19,4 +22,16 @@ class SerialGenerator:
     >>> serial.generate()
     100
     """
+    def __init__(self, start):
+        self.start = start
+        self.curr = start
+    def generate(self):
+        """Returns the next number in the sequence"""
+        current = self.curr
+        self.curr += 1
+        return current
+    def reset(self):
+        """Resets the serial to the original number"""
+        self.curr = self.start
+
 
